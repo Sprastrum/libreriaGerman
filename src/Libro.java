@@ -13,6 +13,10 @@ public class Libro {
         return disponible;
     }
 
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
     public String getTitulo() {
         return titulo;
     }
