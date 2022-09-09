@@ -9,6 +9,10 @@ public class Libro {
         this.categoria = categoria;
     }
 
+    public Libro() {
+
+    }
+
     public boolean isDisponible() {
         return disponible;
     }
