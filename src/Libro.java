@@ -8,4 +8,20 @@ public class Libro {
         this.autor = autor;
         this.categoria = categoria;
     }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
 }
