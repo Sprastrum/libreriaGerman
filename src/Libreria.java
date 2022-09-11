@@ -1,37 +1,53 @@
-import java.util.List;
+import javax.swing.*;
+import java.util.*;
 
 public class Libreria {
-    private List<Libro> libros;
+    private ArrayList<Libro> libros = new ArrayList<Libro>();
 
     public int cantidadLibros(Libro libro) {
-        int result = 0;
+        int resultado = 0;
 
-        for(int index = 0; 0 >= libros.size(); index++) {
-            if(libro.getTitulo().equals(libros.get(index).getTitulo())) {
-                result = result + 1;
+        for (int index = 0; index < libros.size(); index++) {
+            if (libro.getTitulo().equals(libros.get(index).getTitulo())) {
+                resultado = resultado + 1;
             }
         }
 
-        return result;
+        return resultado;
     }
 
-    public Libro insertar(Libro libro) {
+    public boolean insertar(Libro libro) {
+        boolean resultado = false;
+
         if(cantidadLibros(libro) < 5) {
             libros.add(libro);
+            resultado = true;
         }
 
-        return libro;
+        return resultado;
     }
 
     public Libro buscarPorAutor(String author) {
-        Libro result = new Libro();
+        Libro resultado = new Libro();
 
-        for(Libro l: libros) {
-            if(author.equals(l.getAutor())) {
-                result = l;
+        for (Libro l : libros) {
+            if (author.equals(l.getAutor())) {
+                resultado = l;
             }
         }
 
-        return result;
+        return resultado;
+    }
+
+    public Libro buscarCategoria(String categoria) {
+        Libro resultado = new Libro();
+
+        for(Libro l: libros) {
+            if(l.getCategoria().equals(categoria)) {
+                resultado = l;
+            }
+        }
+
+        return resultado;
     }
 }
