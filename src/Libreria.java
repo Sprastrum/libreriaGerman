@@ -3,12 +3,13 @@ import java.util.*;
 
 public class Libreria {
     private ArrayList<Libro> libros = new ArrayList<Libro>();
+    private ArrayList<Libro> resultado = new ArrayList<Libro>();
 
     public int cantidadLibros(Libro libro) {
         int resultado = 0;
 
-        for (int index = 0; index < libros.size(); index++) {
-            if (libro.getTitulo().equals(libros.get(index).getTitulo())) {
+        for (Libro l : libros) {
+            if (libro.getTitulo().equals(l.getTitulo())) {
                 resultado = resultado + 1;
             }
         }
@@ -27,24 +28,24 @@ public class Libreria {
         return resultado;
     }
 
-    public Libro buscarPorAutor(String author) {
-        Libro resultado = new Libro();
+    public ArrayList<Libro> buscarPorAutor(String author) {
+        resultado.clear();
 
         for (Libro l : libros) {
             if (author.equals(l.getAutor())) {
-                resultado = l;
+                resultado.add(l);
             }
         }
 
         return resultado;
     }
 
-    public Libro buscarCategoria(String categoria) {
-        Libro resultado = new Libro();
+    public ArrayList<Libro> buscarCategoria(String categoria) {
+        resultado.clear();
 
         for(Libro l: libros) {
-            if(l.getCategoria().equals(categoria)) {
-                resultado = l;
+            if(categoria.equals(l.getCategoria())) {
+                resultado.add(l);
             }
         }
 
